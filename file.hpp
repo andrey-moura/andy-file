@@ -23,6 +23,11 @@ namespace uva
         {
             write_all_bytes(path, (uint8_t*)text.data(), text.size()*sizeof(char_type));
         }
+        template<typename char_type>
+        void write_all_text(const std::filesystem::path& path, const std::basic_string_view<char_type>& text)
+        {
+            write_all_bytes(path, (uint8_t*)text.data(), text.size()*sizeof(char_type));
+        }
         void insert_text(const std::filesystem::path& path, size_t position, const char* text, size_t len);
         template<typename char_type>
         void insert_text(const std::filesystem::path& path, size_t position, const std::basic_string<char_type>& text)
@@ -52,7 +57,7 @@ namespace uva
         template<typename T>
         std::vector<T> read_all(const std::string& path)
         {
-            return __read_all<std::vector, T>(path);
+            return __read_all<std::vector<T>>(path);
         }
         template<typename char_type>
         std::basic_string<char_type> read_all_text(const std::string& path)
