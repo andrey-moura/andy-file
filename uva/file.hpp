@@ -69,6 +69,22 @@ namespace uva
         {
             return __read_all<std::basic_string<char_type>>(path.string());
         }
+        template<typename char_type>
+        std::vector<std::basic_string<char_type>> read_all_lines(const std::filesystem::path& path)
+        {
+            std::vector<std::basic_string<char_type>> lines;
+            std::ifstream stream(path, std::ios::in);
+
+            std::basic_string<char_type> text;
+
+            if(stream.is_open()) {
+                while(std::getline(stream, text)) {
+                    lines.push_back(text);
+                }
+            }
+
+            return lines;
+        }
     }; // namespace file
     
 }; // namespace uva
