@@ -85,6 +85,7 @@ namespace uva
 
             return lines;
         }
+        std::filesystem::path executable_path();
     }; // namespace file
     
 }; // namespace uva

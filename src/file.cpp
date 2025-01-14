@@ -23,3 +23,12 @@ void uva::file::insert_text(const std::filesystem::path &path, size_t position, 
         stream.write(content.c_str()+position, content.size()-position);
     }
 }
+
+std::filesystem::path uva::file::executable_path()
+{
+#ifdef __linux__
+    return std::filesystem::read_symlink("/proc/self/exe");
+#else
+    throw std::runtime_error("unsupported platform");
+#endif
+}
