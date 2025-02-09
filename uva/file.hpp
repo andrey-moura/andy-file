@@ -28,12 +28,6 @@ namespace uva
         {
             write_all_bytes(path, (uint8_t*)text.data(), text.size()*sizeof(char_type));
         }
-        void insert_text(const std::filesystem::path& path, size_t position, const char* text, size_t len);
-        template<typename char_type>
-        void insert_text(const std::filesystem::path& path, size_t position, const std::basic_string<char_type>& text)
-        {
-            insert_text(path, position, (const char*)text.c_str(), text.size());
-        }
         template<typename Container>
         Container __read_all(const std::string& path)
         {
