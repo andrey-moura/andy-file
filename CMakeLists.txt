@@ -3,18 +3,18 @@ cmake_minimum_required(VERSION 3.10)
 
 set(CMAKE_CXX_STANDARD 20)
 
-project(uva-file)
+project(andy-file)
 
-add_library(uva-file OBJECT
+add_library(andy-file OBJECT
 	${CMAKE_CURRENT_LIST_DIR}/src/file.cpp
 )
 
 include_directories(${CMAKE_CURRENT_LIST_DIR})
 
-# install(TARGETS uva-file EXPORT uva-fileTargets)
-# install(EXPORT uva-fileTargets
-#     FILE uva-fileTargets.cmake
-#     DESTINATION lib/cmake/uva-file
+# install(TARGETS andy-file EXPORT andy-fileTargets)
+# install(EXPORT andy-fileTargets
+#     FILE andy-fileTargets.cmake
+#     DESTINATION lib/cmake/andy-file
 # )
-# install(TARGETS uva-file DESTINATION lib)
-# install(FILES ${CMAKE_CURRENT_LIST_DIR}/uva/file.hpp DESTINATION include/uva)
+# install(TARGETS andy-file DESTINATION lib)
+# install(FILES ${CMAKE_CURRENT_LIST_DIR}/andy/file.hpp DESTINATION include/andy)
