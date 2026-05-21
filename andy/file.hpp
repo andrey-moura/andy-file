@@ -6,7 +6,7 @@
 #include <fstream>
 #include <filesystem>
 
-namespace andy
+namespace lavi
 {
     namespace file
     {
@@ -82,4 +82,4 @@ namespace andy
         std::filesystem::path executable_path();
     }; // namespace file
     
-}; // namespace andy
+}; // namespace lavi
